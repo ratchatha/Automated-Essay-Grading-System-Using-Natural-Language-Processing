@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { FiClipboard, FiPlus, FiEdit, FiTrash } from "react-icons/fi";
+import { FiClipboard, FiPlus, FiEdit, FiTrash, FiSearch } from "react-icons/fi";
 import Pagination from "./Pagination";
+import CsvUploader from "../components/CsvUploader";
+import ExportPDF from "../components/ExportPDF";
+import SearchBar from "../components/SearchBar";
 
 function DashboardStudents() {
   const [students, setStudents] = useState([]);
+  const [filteredStudents, setFilteredStudents] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -23,9 +27,16 @@ function DashboardStudents() {
   const [isEditMode, setIsEditMode] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
   const [deleteId, setDeleteId] = useState("");
-  // handle load student by ID
+
+  // Search and edit
   const handleEditSearch = () => {
     const found = students.find((s) => s.studentId === editIdInput.trim());
+
+    if (!editIdInput.trim()) {
+      alert("กรุณากรอกรหัสนักศึกษา");
+      return;
+    }
+
     if (!found) {
       alert("ไม่พบนักศึกษาที่ระบุ");
       return;
@@ -41,27 +52,45 @@ function DashboardStudents() {
     setIsEditMode(true);
   };
 
-  // PUT
-  const handleEditStudent = async (e) => {
-    e.preventDefault();
-    const token = localStorage.getItem("token");
-
-    try {
-      await axios.put(`/api/students/${newStudent.studentId}`, newStudent, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      alert("อัปเดตข้อมูลเรียบร้อย");
-      setShowEdit(false);
-      setIsEditMode(false);
-      setEditIdInput("");
-      setNewStudent({ studentId: "", studentName: "", department: "", password: "" });
-      fetchStudents();
-    } catch (err) {
-      alert("อัปเดตข้อมูลไม่สำเร็จ");
+  // search name id
+  const handleSearch = (term) => {
+    if (!term.trim()) {
+      setFilteredStudents(students);
+      return;
     }
+
+    const keyword = term.toLowerCase();
+    const results = students.filter((s) => s.studentName?.toLowerCase().includes(keyword) || s.studentId?.toString().includes(keyword));
+    setFilteredStudents(results);
+    setCurrentPage(1); // รีเซ็ต pagination เมื่อค้นหาใหม่
   };
 
-  // GET
+  // sort order
+  const handleSortChange = (order) => {
+    let sorted = [...filteredStudents];
+
+    switch (order) {
+      case "name-asc":
+        sorted.sort((a, b) => a.studentName.localeCompare(b.studentName));
+        break;
+      case "name-desc":
+        sorted.sort((a, b) => b.studentName.localeCompare(a.studentName));
+        break;
+      case "id-asc":
+        sorted.sort((a, b) => a.studentId.localeCompare(b.studentId));
+        break;
+      case "id-desc":
+        sorted.sort((a, b) => b.studentId.localeCompare(a.studentId));
+        break;
+      default:
+        sorted = [...students];
+        break;
+    }
+
+    setFilteredStudents(sorted);
+  };
+
+  // GET Student
   const fetchStudents = async () => {
     setLoading(true);
     const token = localStorage.getItem("token");
@@ -72,13 +101,13 @@ function DashboardStudents() {
       setStudents(res.data);
       setCurrentPage(1);
     } catch (err) {
-      setError("โหลดข้อมูลล้มเหลว");
+      setError("โหลดข้อมูลนักศึกษาล้มเหลวโปรดลองใหม่อีกครั้ง");
     } finally {
       setLoading(false);
     }
   };
 
-  // POST 
+  // POST Student
   const handleAddStudent = async (e) => {
     e.preventDefault();
     const token = localStorage.getItem("token");
@@ -91,24 +120,82 @@ function DashboardStudents() {
       fetchStudents();
       alert("เพิ่มนักศึกษาสำเร็จ");
     } catch (err) {
-      alert("เพิ่มนักศึกษาไม่สำเร็จ");
+      const errorMsg = err.response?.data?.error;
+      alert(errorMsg);
     }
   };
 
-  // DEL
+  // PUT Student
+  const handleEditStudent = async (e) => {
+    e.preventDefault();
+    const token = localStorage.getItem("token");
+
+    try {
+      await axios.put(`/api/students/${newStudent.studentId}`, newStudent, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      alert("อัปเดตข้อมูลเรียบร้อย");
+      handleEditStudentAnswer();
+      setShowEdit(false);
+      setIsEditMode(false);
+      setEditIdInput("");
+      setNewStudent({ studentId: "", studentName: "", department: "", password: "" });
+      fetchStudents();
+    } catch (err) {
+      const errorMsg = err.response?.data?.error;
+      alert(errorMsg);
+    }
+  };
+
+  // DEL Student
   const handleDeleteStudent = async () => {
+
+    if (!deleteId.trim()) {
+      alert("กรุณากรอกรหัสนักศึกษา");
+      return;
+    }
     const token = localStorage.getItem("token");
 
     try {
       await axios.delete(`/api/students/${deleteId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
+      alert("ลบนักศึกษาเรียบร้อยแล้ว");
       setShowDelete(false);
       setDeleteId("");
       fetchStudents();
+      await handleDeleteStudentAnswer(deleteId);
     } catch (err) {
-      console.log(err)
-      alert("ไม่พบนักศึกษาหรือเกิดข้อผิดพลาด");
+      const errorMsg = err.response?.data?.error;
+      alert(errorMsg || 'ไม่พบรหัสนักศึกษา');
+    }
+  };
+
+  // PUT Student Answer
+  const handleEditStudentAnswer = async () => {
+    const token = localStorage.getItem("token");
+    try {
+      await axios.put(`/api/auth/answers/${newStudent.studentId}`, newStudent, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+    } catch (err) {
+      const errorMsg = err.response?.data?.error;
+      console.log(errorMsg)
+    }
+  };
+
+  // DEL Student Answer
+  const handleDeleteStudentAnswer = async (deleteAnswerId) => {
+    const token = localStorage.getItem("token");
+    try {
+      await axios.delete(`/api/auth/answers/${deleteAnswerId}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      //alert("ลบคำตอบนักศึกษาเรียบร้อยแล้ว");
+    } catch (err) {
+      const errorMsg = err.response?.data?.error;
+      console.log(errorMsg)
+      //alert(errorMsg || "ไม่พบคำตอบของนักศึกษา");
     }
   };
 
@@ -116,67 +203,87 @@ function DashboardStudents() {
     fetchStudents();
   }, []);
 
+  useEffect(() => {
+    if (students.length > 0) {
+      setFilteredStudents(students);
+    }
+  }, [students]);
+
   const indexOfLast = currentPage * pageSize;
   const indexOfFirst = indexOfLast - pageSize;
-  const currentStudents = students.slice(indexOfFirst, indexOfLast);
+  const currentStudents = filteredStudents.slice(indexOfFirst, indexOfLast);
 
   return (
     <div>
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-bold flex items-center gap-2">
-          <FiClipboard className="text-xl" />
-          รายชื่อนักศึกษา
-        </h2>
-
-        <div className="flex space-x-2">
-          <button
-            onClick={() => setShowAdd(true)}
-            className="flex items-center gap-1 px-3 py-1.5 bg-green-600 text-white rounded hover:bg-green-700 transition text-sm">
-            <FiPlus />
-            เพื่ม
-          </button>
-
-          <button
-            onClick={() => setShowEdit(true)}
-            className="flex items-center gap-1 px-3 py-1.5 border rounded hover:bg-gray-200 transition text-sm">
-            <FiEdit />
-            แก้ไข
-          </button>
-
-          <button
-            onClick={() => setShowDelete(true)}
-            className="flex items-center gap-1 px-3 py-1.5 border rounded hover:bg-gray-200 transition text-sm">
-            <FiTrash />
-            ลบ
-          </button>
-        </div>
-      </div>
-
       {error ? (
         <p className="text-red-500">{error}</p>
       ) : (
         !loading && (
           <>
+            <div className="flex justify-between items-center mb-8 gap-4 w-full overflow-x-auto">
+              <h2 className="text-xl font-bold flex items-center gap-2 flex-shrink-0">
+                <FiClipboard className="text-xl" />
+                รายชื่อนักศึกษา
+              </h2>
+
+              <div className="flex-1 min-w-[300px] max-w-3xl">
+                <SearchBar onSearch={handleSearch} onSortChange={handleSortChange} />
+              </div>
+
+              <div className="flex items-center gap-2 flex-shrink-0">
+                <ExportPDF data={filteredStudents} type="list" />
+                <button
+                  onClick={() => setShowAdd(true)}
+                  className="flex items-center gap-1 px-3 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition text-sm"
+                >
+                  <FiPlus />
+                  เพิ่ม
+                </button>
+                <button
+                  onClick={() => setShowEdit(true)}
+                  className="flex items-center gap-1 px-3 py-2 border rounded hover:bg-gray-200 transition text-sm"
+                >
+                  <FiEdit />
+                  แก้ไข
+                </button>
+                <button
+                  onClick={() => setShowDelete(true)}
+                  className="flex items-center gap-1 px-3 py-2 border border-bg-[#BE1515] text-red-600 rounded hover:bg-[#BE1515] hover:text-white transition text-sm"
+                >
+                  <FiTrash />
+                  ลบ
+                </button>
+              </div>
+            </div>
+
             <table className="w-full table-fixed bg-gray-50 border border-gray-300 rounded-lg overflow-hidden font-medium">
               <thead className="bg-[#00A859] text-white">
                 <tr>
                   <th className="p-3 text-center w-20">ลำดับ</th>
-                  <th className="p-3 text-center w-80">รหัส</th>
+                  <th className="p-3 text-center w-80">รหัสนักศึกษา</th>
                   <th className="p-3 text-left w-80">ชื่อ</th>
                   <th className="p-3 text-left  w-80">สาขา</th>
                   <th className="p-3 text-left">รหัสผ่าน</th>
                 </tr>
               </thead>
               <tbody>
-                {currentStudents.map((s, index) => (
-                  <tr key={s.studentId} className="bg-white border-b border-gray-300">
-                    <td className="p-3 text-center">{indexOfFirst + index + 1}</td>
-                    <td className="p-3 text-center">{s.studentId}</td>
-                    <td className="p-3 text-left">{s.studentName}</td>
-                    <td className="p-3 text-left">{s.department}</td>
-                    <td className="p-3 text-left">{s.password}</td>
+                {currentStudents.length > 0 ? (
+                  currentStudents.map((s, index) => (
+                    <tr key={s.studentId} className="bg-white border-b border-gray-300 hover:bg-gray-100 transition">
+                      <td className="p-3 text-center">{indexOfFirst + index + 1}</td>
+                      <td className="p-3 text-center">{s.studentId}</td>
+                      <td className="p-3 text-left">{s.studentName}</td>
+                      <td className="p-3 text-left">{s.department}</td>
+                      <td className="p-3 text-left">{"*".repeat(s.password?.length || 0)}</td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="5" className="text-center py-5 text-gray-500">
+                      ไม่พบนักศึกษาที่ค้นหา
+                    </td>
                   </tr>
-                ))}
+                )}
               </tbody>
             </table>
 
@@ -199,13 +306,14 @@ function DashboardStudents() {
 
       {showAdd && (
         <div className="fixed inset-0 bg-black/30 backdrop-filter-none flex justify-center items-center z-50">
-          <div className="bg-white p-6 rounded-xl w-[90%] max-w-md shadow-lg relative">
+          <div className="bg-white p-6 rounded-xl w-[95%] max-w-3xl shadow-lg relative overflow-y-auto max-h-[90vh]">
             <h3 className="text-lg font-bold mb-4">เพิ่มนักศึกษา</h3>
             <form onSubmit={handleAddStudent} className="space-y-4">
               <div>
                 <label className="block mb-1 font-medium">รหัสนักศึกษา</label>
                 <input
                   type="text"
+                  placeholder="กรอกรหัสนักศึกษา"
                   value={newStudent.studentId}
                   onChange={(e) => setNewStudent({ ...newStudent, studentId: e.target.value })}
                   className="w-full border border-gray-300 rounded p-2"
@@ -216,6 +324,7 @@ function DashboardStudents() {
                 <label className="block mb-1 font-medium">ชื่อนักศึกษา</label>
                 <input
                   type="text"
+                  placeholder="กรอกชื่อนักศึกษา"
                   value={newStudent.studentName}
                   onChange={(e) => setNewStudent({ ...newStudent, studentName: e.target.value })}
                   className="w-full border border-gray-300 rounded p-2"
@@ -227,6 +336,7 @@ function DashboardStudents() {
                 <label className="block mb-1 font-medium">รหัสผ่าน</label>
                 <input
                   type="text"
+                  placeholder="กรอกรหัสผ่าน"
                   value={newStudent.password}
                   onChange={(e) => setNewStudent({ ...newStudent, password: e.target.value })}
                   className="w-full border border-gray-300 rounded p-2"
@@ -241,10 +351,21 @@ function DashboardStudents() {
                   onChange={(e) => setNewStudent({ ...newStudent, department: e.target.value })}
                   className="w-full border border-gray-300 rounded p-2">
                   <option value="" disabled>-- กรุณาเลือกสาขา --</option>
+                  <option value="COMPUTER SCIENCE">COMPUTER SCIENCE</option>
                   <option value="INFORMATION TECHNOLOGY">INFORMATION TECHNOLOGY</option>
-                  <option value="Computer Science">Computer Science</option>
+                  <option value="DATA SCIENCE">DATA SCIENCE</option>
                 </select>
               </div>
+
+              <div>
+                <CsvUploader
+                  onUploadSuccess={() => {
+                    setShowAdd(false); // ปิด modal
+                    setNewStudent({ studentId: "", studentName: "", department: "", password: "" });
+                  }}
+                />
+              </div>
+
 
               <div className="flex justify-end gap-2">
                 <button
@@ -294,7 +415,7 @@ function DashboardStudents() {
                   </button>
                   <button
                     onClick={handleEditSearch}
-                    className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                    className="px-4 py-2 bg-[#1976D2] hover:bg-[#0C3B69] text-white rounded"
                   >
                     ถัดไป
                   </button>
@@ -341,8 +462,9 @@ function DashboardStudents() {
                       className="w-full border border-gray-300 rounded p-2"
                     >
                       <option value="" disabled>-- กรุณาเลือกสาขา --</option>
+                      <option value="COMPUTER SCIENCE">COMPUTER SCIENCE</option>
                       <option value="INFORMATION TECHNOLOGY">INFORMATION TECHNOLOGY</option>
-                      <option value="Computer Science">Computer Science</option>
+                      <option value="DATA SCIENCE">DATA SCIENCE</option>
                     </select>
                   </div>
 

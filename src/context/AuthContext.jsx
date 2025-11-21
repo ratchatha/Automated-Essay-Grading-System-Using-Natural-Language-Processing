@@ -4,6 +4,7 @@ import { jwtDecode } from "jwt-decode";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+
   const [auth, setAuth] = useState(() => {
     const token = localStorage.getItem("token");
     if (!token) return null;
@@ -16,7 +17,7 @@ export const AuthProvider = ({ children }) => {
     }
   });
 
-  const login = (token) => {
+  const login = (token) => { 
     try {
       const { role } = jwtDecode(token);
       setAuth({ token, role });
@@ -26,10 +27,16 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const logout = () => {
-    setAuth(null);
-    localStorage.clear();
-  };
+const logout = () => {
+  setAuth(null);
+  const selectedExamId = localStorage.getItem("selectedExamId");
+
+  localStorage.clear();
+
+  if (selectedExamId) {
+    localStorage.setItem("selectedExamId", selectedExamId);
+  }
+};
 
   return (
     <AuthContext.Provider value={{ auth, login, logout }}>

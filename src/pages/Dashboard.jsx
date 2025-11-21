@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import DashboardDeatils from '../components/DashboardDetails '
+import DashboardDeatils from "../components/DashboardDetails"
 
 function Dashboard() {
   return (

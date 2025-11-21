@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import DashboardStudents from "./DashboardStudents";
 import DashboardExams from "./DashboardExams";
 import DashboardResults from "./DashboardResults";
+import DashboardConfig from "./DashboardConfig";
+import DashboardGroups from "./DashboardGroups";
 import { MdEditNote } from "react-icons/md";
-import { FaUserGraduate, FaRegChartBar  } from "react-icons/fa";
+import { FaUserGraduate, FaRegChartBar } from "react-icons/fa";
+import { FiSettings } from "react-icons/fi";
+import { MdGroup } from "react-icons/md";
 
 function DashboardDetails() {
   const [activeTab, setActiveTab] = useState("students");
@@ -12,10 +16,14 @@ function DashboardDetails() {
     switch (activeTab) {
       case "students":
         return <DashboardStudents />;
+      case "groups":
+        return <DashboardGroups />;
       case "exams":
         return <DashboardExams />;
       case "summary":
         return <DashboardResults />;
+      case "config":
+        return <DashboardConfig />;
       default:
         return null;
     }
@@ -31,8 +39,15 @@ function DashboardDetails() {
             className={`cursor-pointer p-3 rounded-lg hover:bg-gray-100 flex items-center gap-2 ${activeTab === "students" ? "bg-gray-200 font-semibold" : ""}`}
             onClick={() => setActiveTab("students")}
           >
-            <FaUserGraduate className="text-sm"/>
+            <FaUserGraduate className="text-sm" />
             นักเรียน
+          </li>
+          <li
+            className={`cursor-pointer p-3 rounded-lg hover:bg-gray-100 flex items-center gap-2 ${activeTab === "groups" ? "bg-gray-200 font-semibold" : "" }`}
+            onClick={() => setActiveTab("groups")}
+          >
+            <MdGroup className="text-xl" />
+            กลุ่ม
           </li>
           <li
             className={`cursor-pointer p-3 rounded-lg hover:bg-gray-100 flex items-center gap-1 ${activeTab === "exams" ? "bg-gray-200 font-semibold" : ""}`}
@@ -45,8 +60,15 @@ function DashboardDetails() {
             className={`cursor-pointer p-3 rounded-lg hover:bg-gray-100 flex items-center gap-2 ${activeTab === "summary" ? "bg-gray-200 font-semibold" : ""}`}
             onClick={() => setActiveTab("summary")}
           >
-            <FaRegChartBar className="text-xl"/>
+            <FaRegChartBar className="text-xl" />
             สรุปผล
+          </li>
+          <li
+            className={`cursor-pointer p-3 rounded-lg hover:bg-gray-100 flex items-center gap-2 ${activeTab === "config" ? "bg-gray-200 font-semibold" : ""}`}
+            onClick={() => setActiveTab("config")}
+          >
+            <FiSettings className="text-xl" />
+            การตั้งค่า
           </li>
         </ul>
       </div>

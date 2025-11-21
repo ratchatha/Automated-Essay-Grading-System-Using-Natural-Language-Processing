@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from "jwt-decode";
+import axios from 'axios';
 
 function LoginForm() {
   const [studentId, setStudentId] = useState('');
@@ -14,32 +15,24 @@ function LoginForm() {
     e.preventDefault();
 
     try {
-      const res = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ studentId, password }),
-      });
+      const res = await axios.post('/api/auth/login',
+        { studentId, password }
+      );
+      const data = res.data;
+      login(data.token);
+      const decoded = jwtDecode(data.token);
+      const role = decoded.role;
 
-      const data = await res.json();
+      alert('เข้าสู่ระบบสำเร็จ');
+      navigate(role === 'admin' ? '/dashboard' : '/home');
 
-      if (!res.ok) {
-        alert(data.error || 'เข้าสู่ระบบไม่สำเร็จ');
-      } else {
-        login(data.token);
-        navigate('/home');
-        const decoded = jwtDecode(data.token);
-        const role = decoded.role;
-        alert('เข้าสู่ระบบสำเร็จ');
-        if (role === 'admin') {
-          navigate('/dashboard');
-        } else {
-          navigate('/home');
-        }
-      }
-    } catch (error) {
-      alert('ข้อผิดพลาดของเซิร์ฟเวอร์ โปรดลองอีกครั้งในภายหลัง');
+    } catch (err) {
+      const errorMsg = err.response?.data?.error || 'เข้าสู่ระบบไม่สำเร็จ';
+      alert(errorMsg);
+      console.error('การเข้าสู่ระบบล้มเหลว', err);
     }
   };
+
 
 
   return (
