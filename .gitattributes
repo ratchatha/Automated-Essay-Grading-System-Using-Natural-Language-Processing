@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 sbert-api/model/sbert-wangchanberta-customV2/model.safetensors filter=lfs diff=lfs merge=lfs -text
 sbert-api/model/tmp_bs8_ep6/model.safetensors filter=lfs diff=lfs merge=lfs -text
+=======
+# Auto detect text files and perform LF normalization
+* text=auto
+>>>>>>> 0914fc0aaaf6e55c8c174eced9d08f98e19924aa
