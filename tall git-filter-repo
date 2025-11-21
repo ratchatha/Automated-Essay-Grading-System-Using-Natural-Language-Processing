@@ -1,0 +1,253 @@
+[33mcommit a84b3b33655470063f13386e73d4fbcced5adcd8[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Ratchatha Thongchuen <ratchatha@hotmail.com.com>
+Date:   Fri Nov 21 21:31:27 2025 +0700
+
+    Add backend and frontend code, ignore large model files
+
+ .gitignore                                                     | 3 [32m+++[m
+ sbert-api/model/sbert-wangchanberta-customV2/model.safetensors | 3 [31m---[m
+ sbert-api/model/tmp_bs8_ep6/model.safetensors                  | 3 [31m---[m
+ 3 files changed, 3 insertions(+), 6 deletions(-)
+
+[33mcommit ba0d42e8e7561e6ae4a480049607df20b85e7e2b[m
+Author: Ratchatha Thongchuen <ratchatha@hotmail.com.com>
+Date:   Fri Nov 21 21:18:15 2025 +0700
+
+    Track large model files with Git LFS
+
+ .gitattributes                                     |   2 [32m++[m
+ .../sbert-wangchanberta-customV2/model.safetensors | Bin [31m421000008[m -> [32m134[m bytes
+ sbert-api/model/tmp_bs8_ep6/model.safetensors      | Bin [31m421000008[m -> [32m134[m bytes
+ 3 files changed, 2 insertions(+)
+
+[33mcommit bef58d829e5b9fbf09abdef01491d3f55d2a0b8e[m
+Author: Ratchatha Thongchuen <ratchatha@hotmail.com.com>
+Date:   Fri Nov 21 21:07:41 2025 +0700
+
+    Initial commit with backend and frontend
+
+ backend/.env                                       |      4 [32m+[m[31m-[m
+ backend/controllers/authController.js              |      2 [32m+[m[31m-[m
+ backend/controllers/examController.js              |    132 [32m+[m[31m-[m
+ backend/controllers/groupController.js             |    201 [32m+[m
+ backend/controllers/settingController.js           |     49 [32m+[m
+ backend/controllers/studentAnswerController.js     |    153 [32m+[m[31m-[m
+ backend/controllers/studentControler.js            |     86 [32m+[m[31m-[m
+ backend/middleware/requireAuth.js                  |      1 [31m-[m
+ backend/models/examModel.js                        |     50 [32m+[m[31m-[m
+ backend/models/groupModel.js                       |     33 [32m+[m
+ backend/models/settingModel.js                     |     48 [32m+[m
+ backend/models/studentAnswerModel.js               |     30 [32m+[m[31m-[m
+ backend/models/studentModel.js                     |      6 [32m+[m
+ backend/node_modules/.package-lock.json            |    153 [32m+[m
+ backend/node_modules/asynckit/LICENSE              |     21 [32m+[m
+ backend/node_modules/asynckit/README.md            |    233 [32m+[m
+ backend/node_modules/asynckit/bench.js             |     76 [32m+[m
+ backend/node_modules/asynckit/index.js             |      6 [32m+[m
+ backend/node_modules/asynckit/lib/abort.js         |     29 [32m+[m
+ backend/node_modules/asynckit/lib/async.js         |     34 [32m+[m
+ backend/node_modules/asynckit/lib/defer.js         |     26 [32m+[m
+ backend/node_modules/asynckit/lib/iterate.js       |     75 [32m+[m
+ .../node_modules/asynckit/lib/readable_asynckit.js |     91 [32m+[m
+ .../node_modules/asynckit/lib/readable_parallel.js |     25 [32m+[m
+ .../node_modules/asynckit/lib/readable_serial.js   |     25 [32m+[m
+ .../asynckit/lib/readable_serial_ordered.js        |     29 [32m+[m
+ backend/node_modules/asynckit/lib/state.js         |     37 [32m+[m
+ backend/node_modules/asynckit/lib/streamify.js     |    141 [32m+[m
+ backend/node_modules/asynckit/lib/terminator.js    |     29 [32m+[m
+ backend/node_modules/asynckit/package.json         |     63 [32m+[m
+ backend/node_modules/asynckit/parallel.js          |     43 [32m+[m
+ backend/node_modules/asynckit/serial.js            |     17 [32m+[m
+ backend/node_modules/asynckit/serialOrdered.js     |     75 [32m+[m
+ backend/node_modules/asynckit/stream.js            |     21 [32m+[m
+ backend/node_modules/axios/CHANGELOG.md            |   1220 [32m+[m
+ backend/node_modules/axios/LICENSE                 |      7 [32m+[m
+ backend/node_modules/axios/MIGRATION_GUIDE.md      |      3 [32m+[m
+ backend/node_modules/axios/README.md               |   1682 [32m+[m
+ backend/node_modules/axios/dist/axios.js           |   4296 [32m+[m
+ backend/node_modules/axios/dist/axios.js.map       |      1 [32m+[m
+ backend/node_modules/axios/dist/axios.min.js       |      3 [32m+[m
+ backend/node_modules/axios/dist/axios.min.js.map   |      1 [32m+[m
+ backend/node_modules/axios/dist/browser/axios.cjs  |   3730 [32m+[m
+ .../node_modules/axios/dist/browser/axios.cjs.map  |      1 [32m+[m
+ backend/node_modules/axios/dist/esm/axios.js       |   3753 [32m+[m
+ backend/node_modules/axios/dist/esm/axios.js.map   |      1 [32m+[m
+ backend/node_modules/axios/dist/esm/axios.min.js   |      3 [32m+[m
+ .../node_modules/axios/dist/esm/axios.min.js.map   |      1 [32m+[m
+ backend/node_modules/axios/dist/node/axios.cjs     |   4787 [32m+[m
+ backend/node_modules/axios/dist/node/axios.cjs.map |      1 [32m+[m
+ backend/node_modules/axios/index.d.cts             |    550 [32m+[m
+ backend/node_modules/axios/index.d.ts              |    572 [32m+[m
+ backend/node_modules/axios/index.js                |     43 [32m+[m
+ backend/node_modules/axios/lib/adapters/README.md  |     37 [32m+[m
+ .../node_modules/axios/lib/adapters/adapters.js    |     79 [32m+[m
+ backend/node_modules/axios/lib/adapters/fetch.js   |    229 [32m+[m
+ backend/node_modules/axios/lib/adapters/http.js    |    695 [32m+[m
+ backend/node_modules/axios/lib/adapters/xhr.js     |    197 [32m+[m
+ backend/node_modules/axios/lib/axios.js            |     89 [32m+[m
+ .../node_modules/axios/lib/cancel/CancelToken.js   |    135 [32m+[m
+ .../node_modules/axios/lib/cancel/CanceledError.js |     25 [32m+[m
+ backend/node_modules/axios/lib/cancel/isCancel.js  |      5 [32m+[m
+ backend/node_modules/axios/lib/core/Axios.js       |    242 [32m+[m
+ backend/node_modules/axios/lib/core/AxiosError.js  |    103 [32m+[m
+ .../node_modules/axios/lib/core/AxiosHeaders.js    |    314 [32m+[m
+ .../axios/lib/core/InterceptorManager.js           |     71 [32m+[m
+ backend/node_modules/axios/lib/core/README.md      |      8 [32m+[m
+ .../node_modules/axios/lib/core/buildFullPath.js   |     22 [32m+[m
+ .../node_modules/axios/lib/core/dispatchRequest.js |     81 [32m+[m
+ backend/node_modules/axios/lib/core/mergeConfig.js |    106 [32m+[m
+ backend/node_modules/axios/lib/core/settle.js      |     27 [32m+[m
+ .../node_modules/axios/lib/core/transformData.js   |     28 [32m+[m
+ backend/node_modules/axios/lib/defaults/index.js   |    161 [32m+[m
+ .../axios/lib/defaults/transitional.js             |      7 [32m+[m
+ backend/node_modules/axios/lib/env/README.md       |      3 [32m+[m
+ .../node_modules/axios/lib/env/classes/FormData.js |      2 [32m+[m
+ backend/node_modules/axios/lib/env/data.js         |      1 [32m+[m
+ .../axios/lib/helpers/AxiosTransformStream.js      |    143 [32m+[m
+ .../axios/lib/helpers/AxiosURLSearchParams.js      |     58 [32m+[m
+ .../axios/lib/helpers/HttpStatusCode.js            |     71 [32m+[m
+ backend/node_modules/axios/lib/helpers/README.md   |      7 [32m+[m
+ .../axios/lib/helpers/ZlibHeaderTransformStream.js |     28 [32m+[m
+ backend/node_modules/axios/lib/helpers/bind.js     |      7 [32m+[m
+ backend/node_modules/axios/lib/helpers/buildURL.js |     69 [32m+[m
+ .../node_modules/axios/lib/helpers/callbackify.js  |     16 [32m+[m
+ .../node_modules/axios/lib/helpers/combineURLs.js  |     15 [32m+[m
+ .../axios/lib/helpers/composeSignals.js            |     48 [32m+[m
+ backend/node_modules/axios/lib/helpers/cookies.js  |     42 [32m+[m
+ .../axios/lib/helpers/deprecatedMethod.js          |     26 [32m+[m
+ .../axios/lib/helpers/formDataToJSON.js            |     95 [32m+[m
+ .../axios/lib/helpers/formDataToStream.js          |    112 [32m+[m
+ .../node_modules/axios/lib/helpers/fromDataURI.js  |     53 [32m+[m
+ .../axios/lib/helpers/isAbsoluteURL.js             |     15 [32m+[m
+ .../node_modules/axios/lib/helpers/isAxiosError.js |     14 [32m+[m
+ .../axios/lib/helpers/isURLSameOrigin.js           |     14 [32m+[m
+ backend/node_modules/axios/lib/helpers/null.js     |      2 [32m+[m
+ .../node_modules/axios/lib/helpers/parseHeaders.js |     55 [32m+[m
+ .../axios/lib/helpers/parseProtocol.js             |      6 [32m+[m
+ .../axios/lib/helpers/progressEventReducer.js      |     44 [32m+[m
+ backend/node_modules/axios/lib/helpers/readBlob.js |     15 [32m+[m
+ .../axios/lib/helpers/resolveConfig.js             |     57 [32m+[m
+ .../node_modules/axios/lib/helpers/speedometer.js  |     55 [32m+[m
+ backend/node_modules/axios/lib/helpers/spread.js   |     28 [32m+[m
+ backend/node_modules/axios/lib/helpers/throttle.js |     44 [32m+[m
+ .../node_modules/axios/lib/helpers/toFormData.js   |    223 [32m+[m
+ .../axios/lib/helpers/toURLEncodedForm.js          |     18 [32m+[m
+ .../node_modules/axios/lib/helpers/trackStream.js  |     87 [32m+[m
+ .../node_modules/axios/lib/helpers/validator.js    |     99 [32m+[m
+ .../axios/lib/platform/browser/classes/Blob.js     |      3 [32m+[m
+ .../axios/lib/platform/browser/classes/FormData.js |      3 [32m+[m
+ .../platform/browser/classes/URLSearchParams.js    |      4 [32m+[m
+ .../axios/lib/platform/browser/index.js            |     13 [32m+[m
+ .../axios/lib/platform/common/utils.js             |     51 [32m+[m
+ backend/node_modules/axios/lib/platform/index.js   |      7 [32m+[m
+ .../axios/lib/platform/node/classes/FormData.js    |      3 [32m+[m
+ .../lib/platform/node/classes/URLSearchParams.js   |      4 [32m+[m
+ .../node_modules/axios/lib/platform/node/index.js  |     38 [32m+[m
+ backend/node_modules/axios/lib/utils.js            |    744 [32m+[m
+ backend/node_modules/axios/package.json            |    228 [32m+[m
+ backend/node_modules/combined-stream/License       |     19 [32m+[m
+ backend/node_modules/combined-stream/Readme.md     |    138 [32m+[m
+ .../combined-stream/lib/combined_stream.js         |    208 [32m+[m
+ backend/node_modules/combined-stream/package.json  |     25 [32m+[m
+ backend/node_modules/combined-stream/yarn.lock     |     17 [32m+[m
+ backend/node_modules/cors/CONTRIBUTING.md          |     33 [32m+[m
+ backend/node_modules/cors/HISTORY.md               |     58 [32m+[m
+ backend/node_modules/cors/LICENSE                  |     22 [32m+[m
+ backend/node_modules/cors/README.md                |    243 [32m+[m
+ backend/node_modules/cors/lib/index.js             |    238 [32m+[m
+ backend/node_modules/cors/package.json             |     41 [32m+[m
+ backend/node_modules/delayed-stream/.npmignore     |      1 [32m+[m
+ backend/node_modules/delayed-stream/License        |     19 [32m+[m
+ backend/node_modules/delayed-stream/Makefile       |      7 [32m+[m
+ backend/node_modules/delayed-stream/Readme.md      |    141 [32m+[m
+ .../delayed-stream/lib/delayed_stream.js           |    107 [32m+[m
+ backend/node_modules/delayed-stream/package.json   |     27 [32m+[m
+ backend/node_modules/es-set-tostringtag/.eslintrc  |     13 [32m+[m
+ backend/node_modules/es-set-tostringtag/.nycrc     |      9 [32m+[m
+ .../node_modules/es-set-tostringtag/CHANGELOG.md   |     67 [32m+[m
+ backend/node_modules/es-set-tostringtag/LICENSE    |     21 [32m+[m
+ backend/node_modules/es-set-tostringtag/README.md  |     53 [32m+[m
+ backend/node_modules/es-set-tostringtag/index.d.ts |     10 [32m+[m
+ backend/node_modules/es-set-tostringtag/index.js   |     35 [32m+[m
+ .../node_modules/es-set-tostringtag/package.json   |     78 [32m+[m
+ .../node_modules/es-set-tostringtag/test/index.js  |     85 [32m+[m
+ .../node_modules/es-set-tostringtag/tsconfig.json  |      9 [32m+[m
+ backend/node_modules/follow-redirects/LICENSE      |     18 [32m+[m
+ backend/node_modules/follow-redirects/README.md    |    155 [32m+[m
+ backend/node_modules/follow-redirects/debug.js     |     15 [32m+[m
+ backend/node_modules/follow-redirects/http.js      |      1 [32m+[m
+ backend/node_modules/follow-redirects/https.js     |      1 [32m+[m
+ backend/node_modules/follow-redirects/index.js     |    686 [32m+[m
+ backend/node_modules/follow-redirects/package.json |     58 [32m+[m
+ backend/node_modules/form-data/License             |     19 [32m+[m
+ backend/node_modules/form-data/README.md.bak       |    355 [32m+[m
+ backend/node_modules/form-data/Readme.md           |    355 [32m+[m
+ backend/node_modules/form-data/index.d.ts          |     62 [32m+[m
+ backend/node_modules/form-data/lib/browser.js      |      4 [32m+[m
+ backend/node_modules/form-data/lib/form_data.js    |    498 [32m+[m
+ backend/node_modules/form-data/lib/populate.js     |     10 [32m+[m
+ .../form-data/node_modules/mime-db/HISTORY.md      |    507 [32m+[m
+ .../form-data/node_modules/mime-db/LICENSE         |     23 [32m+[m
+ .../form-data/node_modules/mime-db/README.md       |    100 [32m+[m
+ .../form-data/node_modules/mime-db/db.json         |   8519 [32m++[m
+ .../form-data/node_modules/mime-db/index.js        |     12 [32m+[m
+ .../form-data/node_modules/mime-db/package.json    |     60 [32m+[m
+ .../form-data/node_modules/mime-types/HISTORY.md   |    397 [32m+[m
+ .../form-data/node_modules/mime-types/LICENSE      |     23 [32m+[m
+ .../form-data/node_modules/mime-types/README.md    |    113 [32m+[m
+ .../form-data/node_modules/mime-types/index.js     |    188 [32m+[m
+ .../form-data/node_modules/mime-types/package.json |     44 [32m+[m
+ backend/node_modules/form-data/package.json        |     66 [32m+[m
+ backend/node_modules/has-tostringtag/.eslintrc     |      5 [32m+[m
+ .../has-tostringtag/.github/FUNDING.yml            |     12 [32m+[m
+ backend/node_modules/has-tostringtag/.nycrc        |     13 [32m+[m
+ backend/node_modules/has-tostringtag/CHANGELOG.md  |     42 [32m+[m
+ backend/node_modules/has-tostringtag/LICENSE       |     21 [32m+[m
+ backend/node_modules/has-tostringtag/README.md     |     46 [32m+[m
+ backend/node_modules/has-tostringtag/index.d.ts    |      3 [32m+[m
+ backend/node_modules/has-tostringtag/index.js      |      8 [32m+[m
+ backend/node_modules/has-tostringtag/package.json  |    108 [32m+[m
+ backend/node_modules/has-tostringtag/shams.d.ts    |      3 [32m+[m
+ backend/node_modules/has-tostringtag/shams.js      |      8 [32m+[m
+ backend/node_modules/has-tostringtag/test/index.js |     21 [32m+[m
+ .../has-tostringtag/test/shams/core-js.js          |     31 [32m+[m
+ .../test/shams/get-own-property-symbols.js         |     30 [32m+[m
+ backend/node_modules/has-tostringtag/test/tests.js |     15 [32m+[m
+ backend/node_modules/has-tostringtag/tsconfig.json |     49 [32m+[m
+ backend/node_modules/object-assign/index.js        |     90 [32m+[m
+ backend/node_modules/object-assign/license         |     21 [32m+[m
+ backend/node_modules/object-assign/package.json    |     42 [32m+[m
+ backend/node_modules/object-assign/readme.md       |     61 [32m+[m
+ backend/node_modules/proxy-from-env/.eslintrc      |     29 [32m+[m
+ backend/node_modules/proxy-from-env/.travis.yml    |     10 [32m+[m
+ backend/node_modules/proxy-from-env/LICENSE        |     20 [32m+[m
+ backend/node_modules/proxy-from-env/README.md      |    131 [32m+[m
+ backend/node_modules/proxy-from-env/index.js       |    108 [32m+[m
+ backend/node_modules/proxy-from-env/package.json   |     34 [32m+[m
+ backend/node_modules/proxy-from-env/test.js        |    483 [32m+[m
+ backend/package-lock.json                          |    155 [32m+[m
+ backend/package.json                               |      2 [32m+[m
+ backend/routes/auth.js                             |     64 [32m+[m[31m-[m
+ backend/server.js                                  |      7 [32m+[m[31m-[m
+ frontend                                           |      2 [32m+[m[31m-[m
+ json/Students.json                                 |    866 [32m+[m
+ exam.json => json/exam.json                        |      0
+ json/mydb.exams.json                               |    211 [32m+[m
+ json/mydb.studentAnswers.json                      |    564 [32m+[m
+ sbert-api/.env                                     |      1 [32m+[m
+ sbert-api/__pycache__/database.cpython-310.pyc     |    Bin [31m0[m -> [32m451[m bytes
+ sbert-api/__pycache__/database.cpython-313.pyc     |    Bin [31m0[m -> [32m559[m bytes
+ sbert-api/__pycache__/main.cpython-310.pyc         |    Bin [31m0[m -> [32m703[m bytes
+ sbert-api/__pycache__/main.cpython-313.pyc         |    Bin [31m0[m -> [32m942[m bytes
+ sbert-api/database.py                              |     11 [32m+[m
+ sbert-api/main.py                                  |     25 [32m+[m
+ .../1_Pooling/config.json                          |     10 [32m+[m
+ .../model/sbert-wangchanberta-customV2/README.md   |    394 [32m+[m
+ .../model/sbert-wangchanberta-customV2/config.json |     28 [32m+[m
+ .../config_sentence_transformers.json              |     14 [32m+[m
+ .../eval/similarity_evaluation_results.csv         |      4 [32m+[m
+ .../sbert-wangchanberta-customV2/model.safetensors |    Bin [31m0[m -> [32m421000008[m bytes
+ .../sbert-wangchanberta-customV2/modules.json      |     14 [32m+[m
+ .../sentence_bert_config.json                      |      4 [32m+[m
+ .../sentencepiece.bpe.model                        |    Bin [31m0[m -> [32m904693[m bytes
+ .../special_tokens_map.json                        |     56 [3
