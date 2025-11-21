@@ -5,6 +5,7 @@ const studentSchema = new Schema({
     studentId: {
         type: String,
         required: true,
+        maxlength: 9,
         unique: true
     },
     studentName: {
@@ -24,6 +25,11 @@ const studentSchema = new Schema({
         type: String,
         enum: ['user', 'admin'],
         default: 'user'
+    },
+    group: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Group',
+        default: null
     }
 }, { timestamps: true })
 

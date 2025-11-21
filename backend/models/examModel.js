@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const questionSchema = new mongoose.Schema({
+const questionSchema = new Schema({
     questionId: {
         type: String,
         required: true
@@ -12,38 +13,37 @@ const questionSchema = new mongoose.Schema({
     modelAnswers: {
         type: [String],
         required: true
+    },
+    answersScore: {
+        type: Number,
+        default: null
     }
 });
 
-const chapterSchema = new mongoose.Schema({
-    chapterTitle: {
+const examSchema = new Schema({
+    examId: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    title: {
         type: String,
         required: true
     },
     questions: {
         type: [questionSchema],
         required: true
-    }
-});
-
-const examSchema = new mongoose.Schema(
-    {
-        examId: {
-            type: String,
-            required: true,
-            unique: true
-        },
-        title: {
-            type: String,
-            required: true
-        },
-        chapters: {
-            type: [chapterSchema],
-            required: true
-        }
     },
-    { timestamps: true }
-);
+    totalAnswersScore: {
+        type: Number,
+        default: null
+    },
+    allowedGroups: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Group'
+        }
+    ]
+}, { timestamps: true });
 
-const Exam = mongoose.model('Exam', examSchema);
-module.exports = Exam;
+module.exports = mongoose.model('Exam', examSchema);

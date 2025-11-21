@@ -22,7 +22,7 @@ const loginStudent = async (req, res) => {
             role: student.role
         },
             process.env.JWT_SECRET,
-            { expiresIn: '4h' }
+            { expiresIn: '24h' }
         );
 
         res.status(200).json({

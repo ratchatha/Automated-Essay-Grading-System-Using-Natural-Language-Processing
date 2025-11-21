@@ -5,6 +5,7 @@ const studentRoutes = require('./routes/students')
 const authRoutes = require('./routes/auth');
 const adminRoutes = require('./routes/admin');
 
+
 // express app
 const app = express()
 
@@ -12,7 +13,7 @@ const app = express()
 app.use(express.json())
 
 app.use((req, res, next) => {
-  console.log(req.path, req.method)
+  console.log(req.method,req.path)
   next()
 })
 
@@ -22,9 +23,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/admin', adminRoutes);
 
 // connect to db
-mongoose.connect(process.env.MONG_URI , {
-  serverSelectionTimeoutMS: 30000,
-})
+mongoose.connect(process.env.MONG_URI , {serverSelectionTimeoutMS: 30000,})
   .then(() => {
     app.listen(process.env.PORT, () => {
       console.log(`Connect to DB & Server is running on port`, process.env.PORT)

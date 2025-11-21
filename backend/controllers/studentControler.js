@@ -44,9 +44,9 @@ const getStudentById = async (req, res) => {
     }
 };
 
+// Create a student 
 const createStudent = async (req, res) => {
     let students = req.body;
-
     // ถ้า req.body ไม่ใช่อาร์เรย์ ให้แปลงเป็นอาร์เรย์ที่มีนักศึกษา 1 คน
     if (!Array.isArray(students)) {
         students = [students];
@@ -66,9 +66,15 @@ const createStudent = async (req, res) => {
             });
         }
 
-        if (s.password.length > 6) {
+        if (!/^\d{9}$/.test(s.studentId)) {
             return res.status(400).json({
-                error: "รหัสผ่านต้องไม่เกิน 6 ตัวอักษร",
+                error: "รหัสนักศึกษาต้องเป็นตัวเลข 9 หลัก",
+                studentId: s.studentId
+            });
+        }
+        if (s.password.length !== 6) {
+            return res.status(400).json({
+                error: "รหัสผ่านต้องมีความยาว 6 หลัก",
                 studentId: s.studentId
             });
         }
@@ -80,7 +86,8 @@ const createStudent = async (req, res) => {
             studentName: s.studentName,
             department: s.department,
             password: s.password,
-            role: s.role || "user"
+            role: s.role || "user",
+            group: s.group || null
         }));
 
         const created = await Student.insertMany(formatted, { ordered: false });
@@ -93,7 +100,6 @@ const createStudent = async (req, res) => {
                 details: error
             });
         }
-
         res.status(500).json({ error: "เกิดข้อผิดพลาดภายในเซิร์ฟเวอร์: " + error.message });
     }
 };
@@ -101,67 +107,69 @@ const createStudent = async (req, res) => {
 // Delete a student by ID
 const deleteStudent = async (req, res) => {
     const id = req.params.studentId;
-/*     if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(400).json({ error: 'Invalid student ID format' });
-    } */
     try {
         const student = await Student.findOneAndDelete({ studentId: id });
 
         if (!student) {
-            return res.status(404).json({ error: 'Student not found' });
+            return res.status(404).json({ error: 'ไม่พบรหัสนักศึกษา' });
         }
-        res.status(200).json({ message: 'Student deleted successfully', student });
+        res.status(200).json({ message: 'ลบนักศึกษาเรียบร้อยแล้ว', student });
     } catch (error) {
-        res.status(500).json({ error: 'Server error: ' + error.message });
+        res.status(500).json({ error: 'เกิดข้อผิดพลาดภายในเซิร์ฟเวอร์: ' + error.message });
     }
 }
 
-// Update a student by ID
 const updateStudent = async (req, res) => {
     const id = req.params.studentId;
     const { studentId, studentName, department, password } = req.body;
 
-/*     if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(400).json({ error: 'Invalid student ID format' });
-    } */
-
+    // ตรวจสอบข้อมูล
     if (studentId && !/^\d{9}$/.test(studentId)) {
-        return res.status(400).json({ error: 'Student ID must be exactly 9 digits' });
+        return res.status(400).json({ error: 'รหัสนักศึกษาต้องเป็นตัวเลข 9 หลัก' });
     }
-
-    if (studentName != null && studentName.trim() === '') {
-        return res.status(400).json({ error: 'Student name cannot be empty' });
+    if (studentName?.trim() === '') {
+        return res.status(400).json({ error: 'ชื่อนักศึกษาไม่สามารถเว้นว่างได้' });
     }
-
-    if (department != null && department.trim() === '') {
-        return res.status(400).json({ error: 'Course cannot be empty' });
+    if (department?.trim() === '') {
+        return res.status(400).json({ error: 'ภาควิชาไม่สามารถเว้นว่างได้' });
     }
-
-    if (password && password.length > 6) {
-        return res.status(400).json({ error: 'Password must not exceed 6 characters' });
+    if (password && password.length !== 6) {
+        return res.status(400).json({ error: 'รหัสผ่านต้องมีความยาว 6 หลัก' });
     }
 
     try {
-        const student = await Student.findOne({ studentId: id });
-        if (!student) {
-            return res.status(404).json({ error: 'Student not found' });
+        // อัปเดตเฉพาะ field ที่อนุญาต
+        const updateFields = {};
+        if (studentId) updateFields.studentId = studentId;
+        if (studentName) updateFields.studentName = studentName;
+        if (department) updateFields.department = department;
+        if (password) updateFields.password = password;
+
+        const updatedStudent = await Student.findOneAndUpdate(
+            { studentId: id },      
+            updateFields,   
+            { new: true, runValidators: true } // คืนค่าล่าสุด + เช็ค validation
+        );
+
+        if (!updatedStudent) {
+            return res.status(404).json({ error: 'ไม่พบนักศึกษาในระบบ' });
         }
 
-        if (studentId) student.studentId = studentId;
-        if (studentName) student.studentName = studentName;
-        if (department) student.department = department;
-        if (password) student.password = password;
+        res.status(200).json({
+            message: 'แก้ไขข้อมูลนักศึกษาสำเร็จ',
+            student: updatedStudent
+        });
 
-        await student.save();
-
-        res.status(200).json(student);
     } catch (error) {
         if (error.code === 11000) {
-            return res.status(400).json({ error: 'Duplicate student ID' });
+            return res.status(400).json({ error: 'มีรหัสนักศึกษานี้อยู่ในระบบแล้ว' });
         }
-        res.status(500).json({ error: 'Server error: ' + error.message });
+        if (error.name === 'ValidationError') {
+            return res.status(400).json({ error: 'ข้อมูลไม่ถูกต้อง', details: error.errors });
+        }
+        res.status(500).json({ error: 'เกิดข้อผิดพลาดภายในเซิร์ฟเวอร์: ' + error.message });
     }
-}
+};
 
 module.exports = {
     getStudents,

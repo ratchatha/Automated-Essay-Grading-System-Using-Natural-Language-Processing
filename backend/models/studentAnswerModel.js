@@ -15,7 +15,25 @@ const studentAnswerSchema = new Schema({
         type: String,
         required: true
     },
+    department: {
+        type: String,
+        required: true
+    },
+    group: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Group',
+        default: null
+    },
+    exam: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Exam',
+        required: true
+    },
     examId: {
+        type: String,
+        required: true
+    },
+    title: {
         type: String,
         required: true
     },
@@ -27,16 +45,20 @@ const studentAnswerSchema = new Schema({
             },
             studentAnswer: {
                 type: String,
-                required: true
+                required: false,
+                default: ""
             },
             score: {
                 type: Number,
                 default: null
             }
         }
-    ]
-}, 
-{
+    ],
+    totalScore: {
+        type: Number,
+        default: null
+    }
+}, {
     timestamps: true,
     collection: 'studentAnswers'
 });
