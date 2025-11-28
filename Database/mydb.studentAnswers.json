@@ -1,0 +1,564 @@
+[{
+  "_id": {
+    "$oid": "686d42f5c57b1e2c97b1da74"
+  },
+  "student": {
+    "$oid": "68571e9c89d62bae16afcfcb"
+  },
+  "studentId": "admin",
+  "studentName": "Dev",
+  "examId": "EXAM001",
+  "answers": [
+    {
+      "questionId": "I1",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d42f5c57b1e2c97b1da75"
+      }
+    },
+    {
+      "questionId": "I2",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d42f5c57b1e2c97b1da76"
+      }
+    },
+    {
+      "questionId": "I3",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d42f5c57b1e2c97b1da77"
+      }
+    },
+    {
+      "questionId": "I4",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d42f5c57b1e2c97b1da78"
+      }
+    },
+    {
+      "questionId": "I5",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d42f5c57b1e2c97b1da79"
+      }
+    },
+    {
+      "questionId": "I6",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d42f5c57b1e2c97b1da7a"
+      }
+    },
+    {
+      "questionId": "I7",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d42f5c57b1e2c97b1da7b"
+      }
+    },
+    {
+      "questionId": "I8",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d42f5c57b1e2c97b1da7c"
+      }
+    },
+    {
+      "questionId": "S1",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d42f5c57b1e2c97b1da7d"
+      }
+    },
+    {
+      "questionId": "S2",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d42f5c57b1e2c97b1da7e"
+      }
+    },
+    {
+      "questionId": "N1",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d42f5c57b1e2c97b1da7f"
+      }
+    },
+    {
+      "questionId": "N2",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d42f5c57b1e2c97b1da80"
+      }
+    },
+    {
+      "questionId": "N3",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d42f5c57b1e2c97b1da81"
+      }
+    },
+    {
+      "questionId": "N4",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d42f5c57b1e2c97b1da82"
+      }
+    },
+    {
+      "questionId": "N5",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d42f5c57b1e2c97b1da83"
+      }
+    },
+    {
+      "questionId": "D1",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d42f5c57b1e2c97b1da84"
+      }
+    },
+    {
+      "questionId": "D2",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d42f5c57b1e2c97b1da85"
+      }
+    },
+    {
+      "questionId": "D3",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d42f5c57b1e2c97b1da86"
+      }
+    },
+    {
+      "questionId": "D4",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d42f5c57b1e2c97b1da87"
+      }
+    },
+    {
+      "questionId": "E1",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d42f5c57b1e2c97b1da88"
+      }
+    },
+    {
+      "questionId": "C1",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d42f5c57b1e2c97b1da89"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-07-08T16:10:29.757Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-08T16:10:29.757Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686d4498c57b1e2c97b1daaf"
+  },
+  "student": {
+    "$oid": "68571e9c89d62bae16afcfcb"
+  },
+  "studentId": "admin",
+  "studentName": "Dev",
+  "examId": "EXAM001",
+  "answers": [
+    {
+      "questionId": "I1",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d4498c57b1e2c97b1dab0"
+      }
+    },
+    {
+      "questionId": "I2",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d4498c57b1e2c97b1dab1"
+      }
+    },
+    {
+      "questionId": "I3",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d4498c57b1e2c97b1dab2"
+      }
+    },
+    {
+      "questionId": "I4",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d4498c57b1e2c97b1dab3"
+      }
+    },
+    {
+      "questionId": "I5",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d4498c57b1e2c97b1dab4"
+      }
+    },
+    {
+      "questionId": "I6",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d4498c57b1e2c97b1dab5"
+      }
+    },
+    {
+      "questionId": "I7",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d4498c57b1e2c97b1dab6"
+      }
+    },
+    {
+      "questionId": "I8",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d4498c57b1e2c97b1dab7"
+      }
+    },
+    {
+      "questionId": "S1",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d4498c57b1e2c97b1dab8"
+      }
+    },
+    {
+      "questionId": "S2",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d4498c57b1e2c97b1dab9"
+      }
+    },
+    {
+      "questionId": "N1",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d4498c57b1e2c97b1daba"
+      }
+    },
+    {
+      "questionId": "N2",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d4498c57b1e2c97b1dabb"
+      }
+    },
+    {
+      "questionId": "N3",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d4498c57b1e2c97b1dabc"
+      }
+    },
+    {
+      "questionId": "N4",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d4498c57b1e2c97b1dabd"
+      }
+    },
+    {
+      "questionId": "N5",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d4498c57b1e2c97b1dabe"
+      }
+    },
+    {
+      "questionId": "D1",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d4498c57b1e2c97b1dabf"
+      }
+    },
+    {
+      "questionId": "D2",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d4498c57b1e2c97b1dac0"
+      }
+    },
+    {
+      "questionId": "D3",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d4498c57b1e2c97b1dac1"
+      }
+    },
+    {
+      "questionId": "D4",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d4498c57b1e2c97b1dac2"
+      }
+    },
+    {
+      "questionId": "E1",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d4498c57b1e2c97b1dac3"
+      }
+    },
+    {
+      "questionId": "C1",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d4498c57b1e2c97b1dac4"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-07-08T16:17:28.371Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-08T16:17:28.371Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "686d48a6c57b1e2c97b1daea"
+  },
+  "student": {
+    "$oid": "68571e9c89d62bae16afcfcb"
+  },
+  "studentId": "admin",
+  "studentName": "Dev",
+  "examId": "EXAM001",
+  "answers": [
+    {
+      "questionId": "I1",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d48a6c57b1e2c97b1daeb"
+      }
+    },
+    {
+      "questionId": "I2",
+      "studentAnswer": "v",
+      "score": null,
+      "_id": {
+        "$oid": "686d48a6c57b1e2c97b1daec"
+      }
+    },
+    {
+      "questionId": "I3",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d48a6c57b1e2c97b1daed"
+      }
+    },
+    {
+      "questionId": "I4",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d48a6c57b1e2c97b1daee"
+      }
+    },
+    {
+      "questionId": "I5",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d48a6c57b1e2c97b1daef"
+      }
+    },
+    {
+      "questionId": "I6",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d48a6c57b1e2c97b1daf0"
+      }
+    },
+    {
+      "questionId": "I7",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d48a6c57b1e2c97b1daf1"
+      }
+    },
+    {
+      "questionId": "I8",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d48a6c57b1e2c97b1daf2"
+      }
+    },
+    {
+      "questionId": "S1",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d48a6c57b1e2c97b1daf3"
+      }
+    },
+    {
+      "questionId": "S2",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d48a6c57b1e2c97b1daf4"
+      }
+    },
+    {
+      "questionId": "N1",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d48a6c57b1e2c97b1daf5"
+      }
+    },
+    {
+      "questionId": "N2",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d48a6c57b1e2c97b1daf6"
+      }
+    },
+    {
+      "questionId": "N3",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d48a6c57b1e2c97b1daf7"
+      }
+    },
+    {
+      "questionId": "N4",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d48a6c57b1e2c97b1daf8"
+      }
+    },
+    {
+      "questionId": "N5",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d48a6c57b1e2c97b1daf9"
+      }
+    },
+    {
+      "questionId": "D1",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d48a6c57b1e2c97b1dafa"
+      }
+    },
+    {
+      "questionId": "D2",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d48a6c57b1e2c97b1dafb"
+      }
+    },
+    {
+      "questionId": "D3",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d48a6c57b1e2c97b1dafc"
+      }
+    },
+    {
+      "questionId": "D4",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d48a6c57b1e2c97b1dafd"
+      }
+    },
+    {
+      "questionId": "E1",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d48a6c57b1e2c97b1dafe"
+      }
+    },
+    {
+      "questionId": "C1",
+      "studentAnswer": "Test",
+      "score": null,
+      "_id": {
+        "$oid": "686d48a6c57b1e2c97b1daff"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-07-08T16:34:46.677Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-08T16:34:46.677Z"
+  },
+  "__v": 0
+}]

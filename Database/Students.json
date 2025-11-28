@@ -1,0 +1,866 @@
+[
+    {
+        "studentId": "620710112",
+        "studentName": "นางสาวคีตยา อุ่นโชคดี",
+        "department": "Computer Science",
+        "password": "87mKCZ"
+    },
+    {
+        "studentId": "620710132",
+        "studentName": "นางสาววิภาวรรณ บุจนะ",
+        "department": "Computer Science",
+        "password": "QSi2HY"
+    },
+    {
+        "studentId": "620710137",
+        "studentName": "นางสาวสิริวรรณ อมรพิพัฒน์",
+        "department": "Computer Science",
+        "password": "mtKZ8P"
+    },
+    {
+        "studentId": "630710054",
+        "studentName": "นางสาวกัญญ์วรา ศรีสวัสดิ์",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "OE19om"
+    },
+    {
+        "studentId": "630710055",
+        "studentName": "นายบุญนรินทร์ ศักดิ์บุญญารัตน์",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "Lcg9YK"
+    },
+    {
+        "studentId": "630710056",
+        "studentName": "นางสาวพลอยชมพู ครุธชา",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "atK4NS"
+    },
+    {
+        "studentId": "630710057",
+        "studentName": "นางสาวภาวินี กล่ำโพธิ์ทอง",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "MDn9uX"
+    },
+    {
+        "studentId": "630710058",
+        "studentName": "นางสาวอรณัญช์ จันทร์ทวี",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "LEv5dO"
+    },
+    {
+        "studentId": "630710161",
+        "studentName": "นายณัฐนนท์ สินบางหว้า",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "ZxYq2R"
+    },
+    {
+        "studentId": "630710163",
+        "studentName": "นายอภิราช ศรีสมุทร",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "DfzvTq"
+    },
+    {
+        "studentId": "630710317",
+        "studentName": "นายจักรินทร์ เมืองหงษ์",
+        "department": "Computer Science",
+        "password": "D2tqEG"
+    },
+    {
+        "studentId": "630710320",
+        "studentName": "นางสาวญาณินท์ เพ็งอ้น",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "y7BRqk"
+    },
+    {
+        "studentId": "630710321",
+        "studentName": "นายฐิติวัสส์ นิติศาสตร์โยธิน",
+        "department": "Computer Science",
+        "password": "fBEb8q"
+    },
+    {
+        "studentId": "630710373",
+        "studentName": "นายกฤษณะ เจริญกิจ",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "seXdx6"
+    },
+    {
+        "studentId": "630710374",
+        "studentName": "นางสาวกฤษณา ชาวไวสอ",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "FBX6vr"
+    },
+    {
+        "studentId": "630710375",
+        "studentName": "นายกฤษรัตน์ รัตนาชาตรี",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "o9oiTm"
+    },
+    {
+        "studentId": "630710377",
+        "studentName": "นายกิติพงศ์ เกียรติถิรกุล",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "DcN7Qm"
+    },
+    {
+        "studentId": "630710378",
+        "studentName": "นายคุณานนต์ เกิดกรุง",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "XIBZJc"
+    },
+    {
+        "studentId": "630710379",
+        "studentName": "นางสาวชุติกาญจน์ ศรีสุธอ",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "536dEw"
+    },
+    {
+        "studentId": "630710380",
+        "studentName": "นางสาวญาณิศา เพ็ชรกลม",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "W3A8Io"
+    },
+    {
+        "studentId": "630710381",
+        "studentName": "นางสาวณัฐธิดา สุระเสียง",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "LSp5nn"
+    },
+    {
+        "studentId": "630710385",
+        "studentName": "นางสาวปรียาภรณ์ คำชารี",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "B7ZEg9"
+    },
+    {
+        "studentId": "630710386",
+        "studentName": "นายปัญญา น้อยศิลทิมวงศ์",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "oxB1OL"
+    },
+    {
+        "studentId": "630710387",
+        "studentName": "นายปัณณธร นวลใย",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "o7GBQc"
+    },
+    {
+        "studentId": "630710389",
+        "studentName": "นางสาวระดีภรณ์ ไชยยนต์",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "wN4pwI"
+    },
+    {
+        "studentId": "630710390",
+        "studentName": "นางสาวฤทัยชนก เรืองธนู",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "svGHJ3"
+    },
+    {
+        "studentId": "630710393",
+        "studentName": "นายอภิชัย รัตนะ",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "ZWzq05"
+    },
+    {
+        "studentId": "630710394",
+        "studentName": "นายอัจฉริยะ อุปการดี",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "KD5ZRl"
+    },
+    {
+        "studentId": "630710395",
+        "studentName": "นางสาวอาภาศิริ จรุวัฒนกุลชัย",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "J0SUGg"
+    },
+    {
+        "studentId": "630710398",
+        "studentName": "นายอิสรา โคตรวิชัย",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "i6Kquv"
+    },
+    {
+        "studentId": "630710472",
+        "studentName": "นายพศวัต วิชิตสโร",
+        "department": "Computer Science",
+        "password": "llzr1S"
+    },
+    {
+        "studentId": "630710481",
+        "studentName": "นายกฤษฎิ์ ประเสริฐนิรันดร์",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "E7jLfX"
+    },
+    {
+        "studentId": "630710483",
+        "studentName": "นายชาญชล ฤทธิ์อินทร์",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "sp6ioU"
+    },
+    {
+        "studentId": "630710484",
+        "studentName": "นางสาวชุตินันท์ พูลทรัพย์",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "nvV2Ub"
+    },
+    {
+        "studentId": "630710683",
+        "studentName": "นายสุรศักดิ์ สุวรรณรัตน์",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "n9fYgg"
+    },
+    {
+        "studentId": "630710729",
+        "studentName": "นางสาวภารัณ พระสียา",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "fpD0X3"
+    },
+    {
+        "studentId": "630710730",
+        "studentName": "นายกฤติน จันทร์มณี",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "BN6opX"
+    },
+    {
+        "studentId": "630710735",
+        "studentName": "นายจิรทีปต์ เหมือนโพธิ์",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "O8vHXB"
+    },
+    {
+        "studentId": "630710736",
+        "studentName": "นางสาวจิรัชญา แสงกล้า",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "emBtN8"
+    },
+    {
+        "studentId": "630710739",
+        "studentName": "นางสาวณัฏฐ์ภิตา นิยมญาติ",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "A8aN2M"
+    },
+    {
+        "studentId": "630710740",
+        "studentName": "นางสาวณัฐลดา กตปุญญกุล",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "akxjB0"
+    },
+    {
+        "studentId": "630710743",
+        "studentName": "นางสาวทิฐสรินทร์ วัดไพร",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "S96bt1"
+    },
+    {
+        "studentId": "630710745",
+        "studentName": "นายนราธิป แตงอ่อน",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "fKkq4O"
+    },
+    {
+        "studentId": "630710748",
+        "studentName": "นายปวริศ ปั่นทระนาถ",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "w8WrFC"
+    },
+    {
+        "studentId": "630710749",
+        "studentName": "นางสาวปาวริน มาลี",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "HIVEF7"
+    },
+    {
+        "studentId": "630710751",
+        "studentName": "นางสาวพรรณวษา พลวงค์ษา",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "s6G35L"
+    },
+    {
+        "studentId": "630710752",
+        "studentName": "นายพศิน มากรุง",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "spN1qu"
+    },
+    {
+        "studentId": "630710753",
+        "studentName": "นายพัชรพล บัวบาน",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "Hvg1TY"
+    },
+    {
+        "studentId": "630710754",
+        "studentName": "นางสาวพัชรศิริ ผลเอนก",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "ncefKl"
+    },
+    {
+        "studentId": "630710757",
+        "studentName": "นางสาวภัทรพร เทพรัก",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "N2bXiu"
+    },
+    {
+        "studentId": "630710758",
+        "studentName": "นายภัทรพล ตั้งบรรจงกิจ",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "h2ICmO"
+    },
+    {
+        "studentId": "630710759",
+        "studentName": "นายภูภาณุ มิคาทนานนท์",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "RcBYn2"
+    },
+    {
+        "studentId": "630710763",
+        "studentName": "นายวรเมธ คิ้วยม",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "I8dhbV"
+    },
+    {
+        "studentId": "630710768",
+        "studentName": "นายวิทวัส มณฑา",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "lB0Fee"
+    },
+    {
+        "studentId": "630710770",
+        "studentName": "นางสาวศุภกาญจน์ ไข่คง",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "D8Fxs3"
+    },
+    {
+        "studentId": "630710771",
+        "studentName": "นายศุภกานต์ แสงรักษ์",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "I5DGw0"
+    },
+    {
+        "studentId": "630710774",
+        "studentName": "นายสรวิศ ดาวเรือง",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "YMXqQ3"
+    },
+    {
+        "studentId": "630710777",
+        "studentName": "นายอนันต์ วัฒนะวิรุณ",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "E2QG8i"
+    },
+    {
+        "studentId": "630710778",
+        "studentName": "นายอภิภัทร รุ่งเรือง",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "p73Wnj"
+    },
+    {
+        "studentId": "630710779",
+        "studentName": "นายอภิวัฒน์ รุ่งเรือง",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "PGl1FN"
+    },
+    {
+        "studentId": "630710781",
+        "studentName": "นายอริญชัย นิลทะวงษ์",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "SGnl2Z"
+    },
+    {
+        "studentId": "630710782",
+        "studentName": "นางสาวอังควิภา ทับเอี่ยม",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "Xev8Mh"
+    },
+    {
+        "studentId": "630710783",
+        "studentName": "นายอินทัช ระพิทย์พันธ์",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "LCL3Cl"
+    },
+    {
+        "studentId": "630710785",
+        "studentName": "นายเอกภพ โฆษิตสัจกุล",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "DUWQ4s"
+    },
+    {
+        "studentId": "630710852",
+        "studentName": "นายสุรวุฒ ปันฉาย",
+        "department": "Computer Science",
+        "password": "aO9hHO"
+    },
+    {
+        "studentId": "640710057",
+        "studentName": "นางสาวพิมมาดา อินทนิล",
+        "department": "Computer Science",
+        "password": "tl1qeJ"
+    },
+    {
+        "studentId": "640710058",
+        "studentName": "นางสาวพีรดา เอี้ยวสุวรรณ",
+        "department": "Computer Science",
+        "password": "Hoagd9"
+    },
+    {
+        "studentId": "640710060",
+        "studentName": "นายภัทราวุธ แซ่จันทร์",
+        "department": "Computer Science",
+        "password": "VL2XDE"
+    },
+    {
+        "studentId": "640710062",
+        "studentName": "นายเมธิสศรต์ ปล้องเจริญ",
+        "department": "Computer Science",
+        "password": "SyzqM2"
+    },
+    {
+        "studentId": "640710063",
+        "studentName": "นางสาววชิรญาณ์ แผ้วภิรมย์",
+        "department": "Computer Science",
+        "password": "v9zQpR"
+    },
+    {
+        "studentId": "640710085",
+        "studentName": "นายชยานันต์ โสลุน",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "a6WxFz"
+    },
+    {
+        "studentId": "640710087",
+        "studentName": "นายทศพล ทัดสิงห์",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "W8G9aU"
+    },
+    {
+        "studentId": "640710095",
+        "studentName": "นางสาววันวิสาข์ สังวรกิจโสภณ",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "MAfN1V"
+    },
+    {
+        "studentId": "640710097",
+        "studentName": "นางสาวศลิษา เทพทอง",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "QQw3Fg"
+    },
+    {
+        "studentId": "640710135",
+        "studentName": "นางสาวจิราพัทร ปิ่นทอง",
+        "department": "Computer Science",
+        "password": "aNL5nX"
+    },
+    {
+        "studentId": "640710136",
+        "studentName": "นายณัฐพนธ์ เมาระพงษ์",
+        "department": "Computer Science",
+        "password": "d6sEwx"
+    },
+    {
+        "studentId": "640710140",
+        "studentName": "นายนรินทร์ ศรีมังกร",
+        "department": "Computer Science",
+        "password": "sLAXgI"
+    },
+    {
+        "studentId": "640710168",
+        "studentName": "นางสาวปรมน ปักกะทานัง",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "YPfa6J"
+    },
+    {
+        "studentId": "640710169",
+        "studentName": "นางสาวพิชญาภา บางยี่ขัน",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "f4nP0X"
+    },
+    {
+        "studentId": "640710489",
+        "studentName": "นายกณวรรธน์ ชูบ้านนา",
+        "department": "Computer Science",
+        "password": "z4f5MV"
+    },
+    {
+        "studentId": "640710491",
+        "studentName": "นางสาวกาญจนาถ ศรีประสมสอง",
+        "department": "Computer Science",
+        "password": "JBxv5A"
+    },
+    {
+        "studentId": "640710497",
+        "studentName": "นางสาวจิตติมา รัตนถาวร",
+        "department": "Computer Science",
+        "password": "b9T1s9"
+    },
+    {
+        "studentId": "640710501",
+        "studentName": "นายเฉลิมศักดิ์ มาลีหอม",
+        "department": "Computer Science",
+        "password": "AexPg9"
+    },
+    {
+        "studentId": "640710502",
+        "studentName": "นายชนกัณต์ อินทรสุวรรณ์",
+        "department": "Computer Science",
+        "password": "UJ0UMn"
+    },
+    {
+        "studentId": "640710503",
+        "studentName": "นางสาวชนากานต์ วิเชียรรัตน์",
+        "department": "Computer Science",
+        "password": "nXhhru"
+    },
+    {
+        "studentId": "640710504",
+        "studentName": "นางสาวชนิภรณ์ สิงห์ทอง",
+        "department": "Computer Science",
+        "password": "gYl8Rf"
+    },
+    {
+        "studentId": "640710511",
+        "studentName": "นายณัฐพิสิษ กังวานธรรมกุล",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "qgqET9"
+    },
+    {
+        "studentId": "640710512",
+        "studentName": "นายณัฐภัทร รุจาคม",
+        "department": "Computer Science",
+        "password": "ZLFyJp"
+    },
+    {
+        "studentId": "640710514",
+        "studentName": "นางสาวดั่งมณีรินทร์ แก้วสมุทร์",
+        "department": "Computer Science",
+        "password": "Rkc5qm"
+    },
+    {
+        "studentId": "640710518",
+        "studentName": "นายทินภัทร อันอาจงาม ( W )",
+        "department": "Computer Science",
+        "password": "T5xSAA"
+    },
+    {
+        "studentId": "640710522",
+        "studentName": "นางสาวธนพร สุเตนัน",
+        "department": "Computer Science",
+        "password": "Nd2FGT"
+    },
+    {
+        "studentId": "640710523",
+        "studentName": "นายธนานนท์ โชคสมบุญเกษตร",
+        "department": "Computer Science",
+        "password": "QALIt7"
+    },
+    {
+        "studentId": "640710525",
+        "studentName": "นางสาวธัญญา บุญเรือง",
+        "department": "Computer Science",
+        "password": "SXEJ3p"
+    },
+    {
+        "studentId": "640710527",
+        "studentName": "นางสาวธารวิมล นาน่วม",
+        "department": "Computer Science",
+        "password": "u49LJV"
+    },
+    {
+        "studentId": "640710536",
+        "studentName": "นางสาวบัณฑิตา คำหริ่ง",
+        "department": "Computer Science",
+        "password": "kl9wtD"
+    },
+    {
+        "studentId": "640710539",
+        "studentName": "นางสาวปวาริษา รัตนเทียนทอง",
+        "department": "Computer Science",
+        "password": "A5ucDP"
+    },
+    {
+        "studentId": "640710546",
+        "studentName": "นายพัสกร กมลวัฒน์",
+        "department": "Computer Science",
+        "password": "iw1THb"
+    },
+    {
+        "studentId": "640710553",
+        "studentName": "นายภานุวัฒน์ เจนภพ",
+        "department": "Computer Science",
+        "password": "bisS9E"
+    },
+    {
+        "studentId": "640710578",
+        "studentName": "นายสิรภพ สุภาพิทยาคม",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "ZFtA6w"
+    },
+    {
+        "studentId": "640710682",
+        "studentName": "นายกฤตนัย ถีระแก้ว",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "eD9TPT"
+    },
+    {
+        "studentId": "640710686",
+        "studentName": "นางสาวกันธิชา จันทร์พุฒ",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "P3Q5Au"
+    },
+    {
+        "studentId": "640710690",
+        "studentName": "นางสาวกุลธิดา อุบล",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "Oq7WDc"
+    },
+    {
+        "studentId": "640710699",
+        "studentName": "นายชนนทพัฒน์ ขุนแก้ว",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "LSvij2"
+    },
+    {
+        "studentId": "640710705",
+        "studentName": "นายฑีฆายุส วรรณโร",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "M3JDWc"
+    },
+    {
+        "studentId": "640710709",
+        "studentName": "นางสาวณัฐณิชา เล็กแสดง",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "M1OfSY"
+    },
+    {
+        "studentId": "640710711",
+        "studentName": "นายณัฐพล แก้วระวัง",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "t6knXo"
+    },
+    {
+        "studentId": "640710712",
+        "studentName": "นายณัฐวัฒน์ บุตรราช",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "tTq1h7"
+    },
+    {
+        "studentId": "640710713",
+        "studentName": "นายณัฐวัตร์ สมณะ",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "Jbl4kc"
+    },
+    {
+        "studentId": "640710714",
+        "studentName": "นางสาวณิชกานต์ ไล่กสิกรรม",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "mA3eqw"
+    },
+    {
+        "studentId": "640710715",
+        "studentName": "นางสาวดาวประกาย สุวโจ",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "J9Ydwt"
+    },
+    {
+        "studentId": "640710719",
+        "studentName": "นายธนชัย ศึกษา",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "YATf0k"
+    },
+    {
+        "studentId": "640710721",
+        "studentName": "นายธนาดล เกียรติบรรเจิด",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "ztv1Xe"
+    },
+    {
+        "studentId": "640710725",
+        "studentName": "นายนัทธพงศ์ เป็กทอง",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "gYYXU5"
+    },
+    {
+        "studentId": "640710732",
+        "studentName": "นายปีติภัทร ผู้ช่วยบำรุง",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "L3ZJxz"
+    },
+    {
+        "studentId": "640710733",
+        "studentName": "นางสาวเปรมกมล สอาดจิตวิไล",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "crnap6"
+    },
+    {
+        "studentId": "640710734",
+        "studentName": "นายพรหมพัฒน์ พจนานันทกุล",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "IICR7Q"
+    },
+    {
+        "studentId": "640710735",
+        "studentName": "นายพลสัณห์ พัฒน์ธนกิจ",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "oZRT9C"
+    },
+    {
+        "studentId": "640710737",
+        "studentName": "นางสาวพัฒนวดี ชาวไร่นา",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "hD1AlI"
+    },
+    {
+        "studentId": "640710738",
+        "studentName": "นายพัทธดนย์ จะนู",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "U9wSGt"
+    },
+    {
+        "studentId": "640710739",
+        "studentName": "นายพัสกร มงคลพร",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "i8kGPe"
+    },
+    {
+        "studentId": "640710741",
+        "studentName": "นางสาวพิมพ์ชนก ธีรพงษกร",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "s7WnSU"
+    },
+    {
+        "studentId": "640710743",
+        "studentName": "นายพิรพัฒน์ ยิ่งแก้ว",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "kL1abk"
+    },
+    {
+        "studentId": "640710744",
+        "studentName": "นายพีระพัฒน์ พ่วงทรัพย์สิน",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "i85N7J"
+    },
+    {
+        "studentId": "640710752",
+        "studentName": "นายรุจดนัย แสงทองดี",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "SMs6c9"
+    },
+    {
+        "studentId": "640710759",
+        "studentName": "นายวิจักขณ์ษมา ห้องทองแดง",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "P3ZXdy"
+    },
+    {
+        "studentId": "640710760",
+        "studentName": "นายวีระวัฒน์ ตระการวิทย์",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "LUOK3n"
+    },
+    {
+        "studentId": "640710765",
+        "studentName": "นางสาวสิปปการ เศวตมาลย์",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "GcyRn0"
+    },
+    {
+        "studentId": "640710767",
+        "studentName": "นายสุพีรพัฒน์ กันอุปัทว์",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "X73aig"
+    },
+    {
+        "studentId": "640710773",
+        "studentName": "นายอนรรฆพัศ รบแคล้ว",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "zynF1h"
+    },
+    {
+        "studentId": "640710776",
+        "studentName": "นางสาวอังษณา รัตนติสร้อย",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "mcNcF3"
+    },
+    {
+        "studentId": "640710778",
+        "studentName": "นายอิลยัส ประเสริฐดำ",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "438P8w"
+    },
+    {
+        "studentId": "640710794",
+        "studentName": "นางสาวกัลยา มงคลเอี่ยม",
+        "department": "DATA SCIENCE",
+        "password": "QqwR1F"
+    },
+    {
+        "studentId": "640710800",
+        "studentName": "นางสาวชนนิกานต์ วาสนาทิพย์",
+        "department": "DATA SCIENCE",
+        "password": "BTaH2G"
+    },
+    {
+        "studentId": "640710810",
+        "studentName": "นางสาวนันทิชา โพธิ์รัง",
+        "department": "DATA SCIENCE",
+        "password": "uclAr2"
+    },
+    {
+        "studentId": "640710816",
+        "studentName": "นางสาวฟาติมา ฮาลมีดซาลมาน อัลซากี",
+        "department": "DATA SCIENCE",
+        "password": "fZYw9c"
+    },
+    {
+        "studentId": "640710829",
+        "studentName": "นางสาวสุธาทิพย์ ศรชัย",
+        "department": "DATA SCIENCE",
+        "password": "OpQI7H"
+    },
+    {
+        "studentId": "640710851",
+        "studentName": "นายวงศพัทธ์ ประดับศรี",
+        "department": "Computer Science",
+        "password": "Mq4aIL"
+    },
+    {
+        "studentId": "640710859",
+        "studentName": "นายนรินทร์ มั่งมีสุข",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "E4uDfE"
+    },
+    {
+        "studentId": "640710860",
+        "studentName": "นายศิวัช สุวรรณวงษ์",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "W1vf5G"
+    },
+    {
+        "studentId": "640710909",
+        "studentName": "นายกิตติธัช แซ่ตั้ง",
+        "department": "DATA SCIENCE",
+        "password": "w8APKV"
+    },
+    {
+        "studentId": "640710922",
+        "studentName": "นายวีรสุ แย้มชม",
+        "department": "DATA SCIENCE",
+        "password": "Fb8ipb"
+    },
+    {
+        "studentId": "640710925",
+        "studentName": "นางสาวอาทิตยา อินแช่มช้อย",
+        "department": "DATA SCIENCE",
+        "password": "X5qQlG"
+    },
+    {
+        "studentId": "640710979",
+        "studentName": "นายรชต ทองชื่น",
+        "department": "Computer Science",
+        "password": "exVX6A"
+    },
+    {
+        "studentId": "640710985",
+        "studentName": "นายสรวิชญ์ อู่ธาดาธนกุล",
+        "department": "INFORMATION TECHNOLOGY",
+        "password": "42Fy68"
+    }
+]
