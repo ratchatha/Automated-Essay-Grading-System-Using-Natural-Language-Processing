@@ -5,3 +5,8 @@ Web_server Folder : เป็นโฟลเดอร์ที่ใช้เก
 Typhoon_server Folder : เป็นโฟลเดอร์ที่ใช้เก็บโมเดล Typhoon LLM ซึ่งเป็นโมเดลที่ระบบนำมาใช้สำหรับการประเมินคำตอบอัตนัย การให้คะแนน และการประมวลผลข้อความตามที่ระบบต้องการ 
 
 Database Folder : เป็นโฟลเดอร์ที่ใช้เก็บไฟล์ฐานข้อมูลทั้งหมดของระบบ เช่น ข้อสอบ คำตอบ คะแนน รวมถึงรายชื่อนักศึกษาทั้งหมดที่ถูกจัดเก็บไว้ในระบบ
+
+## Project Overview
+
+This project is an automated essay grading system using Natural Language Processing.  
+It includes a web-based exam system, student answer submission, automated scoring, and result summary features.
